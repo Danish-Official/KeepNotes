@@ -1,18 +1,19 @@
-const addButton = document.getElementById('add');
 
-let updateLSData = () =>{
+let updateLSData = () => {
     let textAreaData = document.querySelectorAll('textarea');
     let notes = [];
 
-    textAreaData.forEach((note)=>{
+    textAreaData.forEach((note) => {
         return notes.push(note.value);
     })
 
     localStorage.setItem('notes', JSON.stringify(notes));
 }
+
 let addNote = (text = '') => {
     let Note = document.createElement('div');
     Note.classList.add('note');
+    let textnote = document.getElementsByClassName('fun');
 
     let htmlData = `
     <span class="operation">
@@ -20,11 +21,11 @@ let addNote = (text = '') => {
         <button class="edit"><i class="far fa-edit"></i></button>
     </span>
     <div class="main ${text ? "" : "hidden"} "></div>
-    <textarea class="${text ? "hidden" : ""} "></textarea>
-    `;
+    <textarea class="${text ? "hidden" : ""}"></textarea>
+    `
+
     Note.insertAdjacentHTML('afterbegin', htmlData);
     document.querySelector('.container').appendChild(Note);
-
     let editButton = Note.querySelector('.edit');
     let deleteButton = Note.querySelector('.delete');
     let mainDiv = Note.querySelector('.main');
@@ -37,7 +38,7 @@ let addNote = (text = '') => {
 
     textarea.value = text;
     mainDiv.innerHTML = text;
-    
+
     toggleEdit = () => {
         mainDiv.classList.toggle('hidden');
         textarea.classList.toggle('hidden');
@@ -51,10 +52,24 @@ let addNote = (text = '') => {
     })
     editButton.addEventListener('click', () => toggleEdit());
 }
+let Body = document.querySelector('body');
+const addButton = document.getElementById('add');
+const btn = document.getElementById('btn');
 
+btn.addEventListener('click', function onClick(event) {
+    const backgroundColor1 = Body.style.backgroundColor;
+    if (backgroundColor1 == 'black') {
+        Body.style.backgroundColor = 'white';
+        Body.style.color = 'black';
+    } else {
+        Body.style.backgroundColor = 'black';
+        Body.style.color = 'white';
+    }
+});
 let notes = JSON.parse(localStorage.getItem('notes'));
 if (notes) {
-    notes.forEach((note)=> addNote(note));
+    notes.forEach((note) => addNote(note));
 }
 
 addButton.addEventListener('click', () => addNote());
+

@@ -1,12 +1,13 @@
 body {
   margin: 0%;
   overflow-x: hidden;
+  background-color: white;
 }
 .heading {
-  background-color: #FBF37C;
+  background-color: #7af51c;
   font-size: 35px;
   padding: 10px;
-  height: 45px;
+  height: 55px;
   line-height: 18px;
   font-weight: 900;
   letter-spacing: 0.15em;
@@ -33,7 +34,7 @@ a {
   left: 0;
   display: block;
   border-radius: 28px;
-  background: #FBF37C;
+  background: #7af51c;
   width: 56px;
   height: 56px;
   transition: all 0.3s ease;
@@ -63,7 +64,7 @@ a {
 .cta:hover:before {
   width: 100%;
   cursor: pointer;
-  background: #FBF37C;
+  background: #7af51c;
 }
 .cta:hover svg {
   cursor: pointer;
@@ -73,7 +74,7 @@ a {
   transform: scale(0.96);
 }
 
-.container{
+.container {
   width: 100vw;
   height: auto;
   /* border: 1px solid; */
@@ -83,28 +84,28 @@ a {
   justify-content: left;
   flex-wrap: wrap;
 }
-.note{
-  width: 300px;
+.note {
+  width: 290px;
   height: 230px;
   border: none;
   margin: 30px 40px;
 }
-textarea{
+textarea {
   overflow-y: scroll;
-  width: 295px;
+  width: 290px;
   height: 189px;
   resize: none;
   font-size: 1.4rem;
-
+  background: transparent;
+  color: inherit;
 }
-.operation{
+.operation {
   display: flex;
   flex-direction: row-reverse;
-  background-color: #58555A;
-
+  background-color: #58555a;
 }
-.edit{
-  margin:3px 3px;
+.edit {
+  margin: 3px 3px;
   display: inline-block;
   height: 30px;
   width: 30px;
@@ -113,32 +114,38 @@ textarea{
   background-color: white;
   cursor: pointer;
 }
-.edit:hover{
+.edit:hover {
   background-color: rgb(165, 250, 165);
-
 }
-.delete{
-  margin:3px 3px;
+.delete {
+  margin: 3px 3px;
   height: 30px;
   width: 30px;
   border-radius: 50px;
   border: none;
   background-color: white;
   cursor: pointer;
-
 }
-.delete:hover{
+.delete:hover {
   background-color: rgb(252, 108, 108);
-
 }
 
-.hidden{
+.hidden {
   display: none;
 }
-.main{
+.main {
   font-size: 20px;
   border: 1px solid;
-  width: 295px;
+  width: 290px;
   height: 189px;
+}
 
+#btn {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+.form-switch .form-check-input {
+  width: 3em;
+  height: 1.5em;
 }
